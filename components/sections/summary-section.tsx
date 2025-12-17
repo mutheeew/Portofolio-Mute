@@ -31,9 +31,9 @@ const expertise = [
     icon: Code
   },
   {
-    category: "UI/UX Design",
-    skills: ["Figma", "Design Systems", "Responsive Design", "User Research"],
-    level: "Advanced",
+    category: "State Management",
+    skills: ["Redux", "Zustand", "Context API", "React Query"],
+    level: "Advanced", 
     icon: Palette
   },
   {
@@ -53,7 +53,7 @@ const expertise = [
 const achievements = [
   "Meningkatkan performa website klien hingga 40% lebih cepat",
   "Membangun 15+ komponen reusable yang digunakan di multiple projects", 
-  "Mengimplementasikan design system yang konsisten untuk 5+ aplikasi",
+  "Mengintegrasikan API dan database dengan performa optimal",
   "Mentoring 10+ junior developers dalam modern web development",
   "Berkontribusi dalam open source projects dengan 500+ GitHub stars"
 ]
@@ -131,7 +131,7 @@ export function SummarySection() {
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Expertise saya meliputi modern JavaScript frameworks, responsive 
-                design, performance optimization, dan implementasi design systems. 
+                design, performance optimization, dan state management. 
                 Saya selalu update dengan teknologi terbaru dan best practices 
                 dalam industri.
               </p>

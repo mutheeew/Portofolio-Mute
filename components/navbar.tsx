@@ -45,7 +45,7 @@ export function Navbar() {
               <Sparkles className="absolute -top-1 -right-1 h-3 w-3 text-yellow-500 animate-pulse" />
             </div>
             <span className="font-bold text-lg bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-              Frontend Portfolio
+              Muthee
             </span>
           </Link>
           <nav className="flex items-center space-x-8 text-sm font-medium">

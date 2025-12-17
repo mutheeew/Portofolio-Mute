@@ -29,15 +29,15 @@ const projects = [
     stats: { teams: "50+", tasks: "10k+" }
   },
   {
-    title: "🎨 Design System Library", 
-    description: "Comprehensive component library with documentation, theming support, and accessibility features",
-    technologies: ["React", "Storybook", "TypeScript", "Figma", "CSS-in-JS"],
+    title: "� Modern Web Application", 
+    description: "Full-stack web application with user authentication, real-time features, and responsive design",
+    technologies: ["Next.js", "React", "TypeScript", "MongoDB", "Tailwind CSS"],
     gradient: "from-purple-500 via-pink-500 to-red-500",
     bgColor: "bg-purple-50 dark:bg-purple-950/20",
     github: "https://github.com/example",
     live: "https://example.com",
-    status: "Open Source",
-    stats: { downloads: "5k+", stars: "200+" }
+    status: "Live",
+    stats: { users: "800+", uptime: "99.5%" }
   },
   {
     title: "📊 Analytics Dashboard", 

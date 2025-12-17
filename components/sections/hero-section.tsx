@@ -3,21 +3,21 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Code, Database, BarChart3, Palette, Zap, Globe, ArrowDown, Play, Download, Star, Users, Coffee } from "lucide-react"
+import { Code, Database, BarChart3, Palette, Zap, Globe, ArrowDown, Play, Download, Star, Handshake, ChartLine } from "lucide-react"
 
 const skills = [
   { name: "React/Next.js", icon: Code, color: "bg-blue-500/10 text-blue-600 border-blue-200 dark:border-blue-800" },
   { name: "TypeScript", icon: Code, color: "bg-blue-500/10 text-blue-600 border-blue-200 dark:border-blue-800" },
   { name: "Data Visualization", icon: BarChart3, color: "bg-green-500/10 text-green-600 border-green-200 dark:border-green-800" },
-  { name: "UI/UX Design", icon: Palette, color: "bg-purple-500/10 text-purple-600 border-purple-200 dark:border-purple-800" },
+  { name: "State Management", icon: Palette, color: "bg-purple-500/10 text-purple-600 border-purple-200 dark:border-purple-800" },
   { name: "Performance", icon: Zap, color: "bg-yellow-500/10 text-yellow-600 border-yellow-200 dark:border-yellow-800" },
   { name: "Database", icon: Database, color: "bg-red-500/10 text-red-600 border-red-200 dark:border-red-800" },
 ]
 
 const stats = [
-  { label: "Happy Clients", value: "50+", icon: Users },
-  { label: "Projects Done", value: "100+", icon: Star },
-  { label: "Coffee Consumed", value: "∞", icon: Coffee },
+  { label: "Years Experience", value: "2+", icon: ChartLine },
+  { label: "Projects Done", value: "10+", icon: Star },
+  { label: "Cross-Team Collaboration", value: "∞", icon: Handshake },
 ]
 
 export function HeroSection() {
@@ -46,16 +46,15 @@ export function HeroSection() {
               
               <div className="space-y-4">
                 <h1 className="text-4xl lg:text-7xl font-bold tracking-tight bg-gradient-to-br from-gray-900 via-gray-800 to-gray-600 dark:from-gray-100 dark:via-gray-200 dark:to-gray-400 bg-clip-text text-transparent">
-                  Frontend Developer
+                  Frontend
                 </h1>
                 <h2 className="text-3xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-pulse">
-                  & UI Craftsman
+                  Web Developer
                 </h2>
               </div>
               
               <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-2xl">
-                Saya menciptakan pengalaman web yang 
-                <span className="font-semibold text-primary"> interaktif, </span> 
+                Saya menciptakan pengalaman web yang <span className="font-semibold text-primary"> interaktif, </span> 
                 <span className="font-semibold text-primary"> performant, </span> 
                 dan <span className="font-semibold text-primary"> beautiful. </span>
                 Portfolio ini bukan hanya showcase project, tapi 
@@ -149,8 +148,8 @@ export function HeroSection() {
                       
                       <Card className="p-4 text-center group hover:bg-purple-50 dark:hover:bg-purple-950/20 transition-all duration-300 hover:scale-105 cursor-pointer border-purple-200 dark:border-purple-800">
                         <Palette className="w-10 h-10 mx-auto mb-3 text-purple-600 group-hover:scale-110 transition-transform" />
-                        <p className="font-semibold text-sm">UI Components</p>
-                        <p className="text-xs text-muted-foreground mt-1">Forms & Animations</p>
+                        <p className="font-semibold text-sm">State Management</p>
+                        <p className="text-xs text-muted-foreground mt-1">Redux & Context</p>
                       </Card>
                       
                       <Card className="p-4 text-center group hover:bg-yellow-50 dark:hover:bg-yellow-950/20 transition-all duration-300 hover:scale-105 cursor-pointer border-yellow-200 dark:border-yellow-800">
