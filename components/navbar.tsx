@@ -37,30 +37,31 @@ export function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <div className="container flex h-16 items-center">
-        <div className="mr-4 hidden md:flex">
-          <Link href="/" className="mr-8 flex items-center space-x-3 group">
+      <div className="container flex h-16 items-center justify-between relative">
+        <div className="hidden md:flex items-center">
+          <Link href="/" className="flex items-center space-x-3 group">
             <div className="relative">
               <Code className="h-7 w-7 text-primary transition-transform group-hover:scale-110" />
               <Sparkles className="absolute -top-1 -right-1 h-3 w-3 text-yellow-500 animate-pulse" />
             </div>
             <span className="font-bold text-lg bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-              Frontend Portfolio
+              Mutheeew
             </span>
           </Link>
-          <nav className="flex items-center space-x-8 text-sm font-medium">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="relative group transition-colors hover:text-primary text-foreground/70 hover:text-foreground py-2"
-              >
-                <span className="relative z-10">{item.name}</span>
-                <div className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-primary to-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
-              </Link>
-            ))}
-          </nav>
         </div>
+
+        <nav className="hidden md:flex items-center space-x-8 text-sm font-medium absolute left-1/2 transform -translate-x-1/2">
+          {navigation.filter(item => item.name !== "Contact").map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="relative group transition-colors hover:text-primary text-foreground/70 hover:text-foreground py-2"
+            >
+              <span className="relative z-10">{item.name}</span>
+              <div className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-primary to-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+            </Link>
+          ))}
+        </nav>
         
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
@@ -106,9 +107,9 @@ export function Navbar() {
           </SheetContent>
         </Sheet>
         
-        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-          <div className="w-full flex-1 md:w-auto md:flex-none">
-            <Link href="/" className="flex items-center space-x-3 md:hidden group">
+        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end md:flex-none">
+          <div className="w-full flex-1 md:hidden">
+            <Link href="/" className="flex items-center space-x-3 group">
               <div className="relative">
                 <Code className="h-6 w-6 text-primary" />
                 <Sparkles className="absolute -top-1 -right-1 h-3 w-3 text-yellow-500 animate-pulse" />
@@ -118,7 +119,14 @@ export function Navbar() {
               </span>
             </Link>
           </div>
-          <nav className="flex items-center space-x-2">
+          <nav className="flex items-center space-x-4">
+            <Link
+              href="#contact"
+              className="hidden md:inline-flex relative group transition-colors hover:text-primary text-foreground/70 hover:text-foreground py-2 text-sm font-medium"
+            >
+              <span className="relative z-10">Contact</span>
+              <div className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-primary to-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+            </Link>
             <ThemeToggle />
           </nav>
         </div>
