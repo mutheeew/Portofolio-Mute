@@ -38,12 +38,12 @@ export function Navbar() {
       }`}
     >
       <div className="container flex h-16 items-center justify-between relative">
-        <div className="hidden md:flex items-center">
+        <div className="hidden md:flex items-center pl-2">
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="relative">
+            {/* <div className="relative">
               <Code className="h-7 w-7 text-primary transition-transform group-hover:scale-110" />
               <Sparkles className="absolute -top-1 -right-1 h-3 w-3 text-yellow-500 animate-pulse" />
-            </div>
+            </div> */}
             <span className="font-bold text-lg bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
               Mutheeew
             </span>
