@@ -14,6 +14,8 @@ import {
   SiNetlify,
   SiZod,
 } from "react-icons/si"
+import { HiDotsHorizontal } from "react-icons/hi"
+
 import { 
   Code2, 
   Sparkles,
@@ -71,11 +73,12 @@ const skills = [
   { name: "Github", icon: SiGithub },
   { name: "Vercel", icon: SiVercel },
   { name: "Netlify", icon: SiNetlify },
+  { name: "And More...", icon: HiDotsHorizontal },
 ]
 
 export default function SkillSection() {
   return (
-    <section className="w-full py-12 bg-background">
+    <section id="skills" className="w-full py-12 bg-background">
       {/* Stats Section */}
       <div className="w-full px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -97,8 +100,8 @@ export default function SkillSection() {
 
       {/* Skills Table */}
       <div className="w-full px-4 mt-16">
-        <div className="w-full border-t-2 border-b-2 border-blue-500 py-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
+        <div className="w-full py-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
             {skills.map((skill, index) => {
               const Icon = skill.icon
               return (
