@@ -13,6 +13,7 @@ import {
   SiVercel,
   SiNetlify,
   SiZod,
+  SiAxios,
 } from "react-icons/si"
 import { HiDotsHorizontal } from "react-icons/hi"
 
@@ -62,6 +63,7 @@ const skills = [
   { name: "React Router", icon: SiReactrouter },
   { name: "Date-fns", icon: Calendar },
   { name: "Zustand", icon: Database },
+  { name: "Axios", icon: SiAxios },
   { name: "TanStack Query", icon: Database },
   { name: "TanStack Table", icon: Table },
   { name: "React Hook Form", icon: FileCheck },

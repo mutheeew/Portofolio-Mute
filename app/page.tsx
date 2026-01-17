@@ -5,16 +5,17 @@ import { SummarySection } from "@/components/sections/summary-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import ProfileSection from "@/components/sections/profile-section";
 import SkillSection from "@/components/sections/skill-section";
-
+import ProjectSection from "@/components/sections/project-section";
 export default function Home() {
   return (
     <main className="flex flex-col">
       <ProfileSection />
       <SkillSection/>
-      <HeroSection/>
-      <SkillsShowcase />
-      <ProjectsSection />
-      <SummarySection />
+      {/* <HeroSection/>
+      <SkillsShowcase /> */}
+      <ProjectSection/>
+      {/* <ProjectsSection /> */}
+      {/* <SummarySection /> */}
       <ContactSection />
     </main>
   );
