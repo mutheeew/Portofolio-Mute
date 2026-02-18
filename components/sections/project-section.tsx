@@ -1,9 +1,9 @@
 'use client'
+import { Shield } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
 import {
   FaReact,
-  FaLaptopCode,
   FaLaughBeam,
   FaFingerprint,
   FaChartLine,
@@ -11,9 +11,28 @@ import {
   FaFlask,
   FaPenNib,
   FaBootstrap,
+  FaShieldAlt,
 } from 'react-icons/fa';
-
-import { SiAxios, SiReactrouter } from 'react-icons/si';
+import { 
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiJavascript,
+  SiTailwindcss,
+  SiBootstrap,
+  SiFramer,
+  SiMui,
+  SiReactrouter,
+  SiGit,
+  SiGithub,
+  SiVercel,
+  SiNetlify,
+  SiZod,
+  SiAxios,
+  SiRadixui,
+  SiReactquery,
+  SiReacttable,
+} from "react-icons/si"
 
 interface Position {
   left: number;
@@ -107,59 +126,65 @@ const ProjectSection: React.FC = () => {
         'Develop a centralized web dashboard designed for eRpay merchants and internal users to manage transactions, merchant data, and payment operations, with role-based access and real-time data visibility across the payment ecosystem.',
     },
     {
-      title: 'ASYSON',
-      icons: [<FaLaptopCode key="1" />],
+      title: 'Ramah Indonesia Dashboard',
+      icons: [<FaReact key="1" />],
       description:
-        'Creating innovative digital solutions for modern businesses and brands.',
+        'A centralized e-commerce dashboard that serves as the source platform for managing UMKM products, orders, and merchant data, integrated with internal systems within the Ramah Indonesia ecosystem to support scalable and efficient operations.',
     },
     {
-      title: 'KETAKUMA',
-      icons: [<FaLaughBeam key="1" />],
+      title: 'Soundbox Dashboard',
+      icons: [<SiNextdotjs key="1" />, <SiFramer key="2" />, <SiTailwindcss key="3" />, <SiTypescript key="4" />, <FaShieldAlt key="5" />],
       description:
         'KETAKUMA, A BEAR WHO LIVES FOR MOVING AGGRESSIVELY, AND HIS FRIEND KETAWAN.',
     },
     {
-      title: 'KTKM',
-      icons: [<FaFingerprint key="1" />],
+      title: 'Service Hub Dashboard',
+      icons: [<SiNextdotjs key="1" />, <SiTypescript key="2" />, <FaShieldAlt key="3" />],
       description:
-        'A UNIQUE APPROACH TO BRAND STORYTELLING THROUGH VISUAL DESIGN.',
+        'An integration-focused dashboard that acts as a service hub, connecting FMS and TMS with multiple systems across the ecosystem through centralized control, data flow management, and real-time operational visibility.',
     },
     {
-      title: 'M-TRUST',
-      icons: [<FaChartLine key="1" />],
+      title: 'Sales Dashboard',
+      icons: [<SiNextdotjs key="1" />, <SiRadixui key="2" />, <SiReactquery key="3" />, <SiReacttable key="4" />, <SiTailwindcss key="5" />, <SiTypescript key="6" />, <FaShieldAlt key="7" />, "Orval"],
       description:
         'BUILDING TRUST THROUGH TRANSPARENT AND RELIABLE FINANCIAL SOLUTIONS.',
     },
     {
-      title: 'RED&GREEN',
+      title: 'DNA - Company Profile',
       icons: [<FaClipboardList key="1" />],
       description:
         'RED AND GREEN CO.,LTD IS THE TOTAL COORDINATOR OF THE PRODUCT PLANNING, BRANDING, AND CIRCULATION TO SALES.',
     },
     {
-      title: 'BASTA',
-      icons: [<FaFlask key="1" />],
+      title: 'Dumbflix',
+      icons: [<FaReact key="1" />],
       description:
-        'BASTA IS A PRODUCT OF BASF, AN INTERNATIONAL CHEMICAL MANUFACTURER HEADQUARTERED IN GERMANY.',
+        'Inspired by Netflix is a subcription-based streaming service that offers a wide variety of TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.',
     },
     {
-      title: 'CREATIVE',
-      icons: [<FaPenNib key="1" />],
+      title: 'Hallo Corona',
+      icons: [<FaReact key="1" />],
       description:
-        'PUSHING BOUNDARIES IN CREATIVE DESIGN AND VISUAL COMMUNICATION.',
+        'A healthcare website that provides various healtcare servies to users in Indonesia, such as COVID-19 information, health tips, and online consultation with doctors.',
+    },
+    {
+      title: 'Ways To Do App',
+      icons: [<FaReact key="1" />],
+      description:
+        'Ways To Do is a task management application that helps users organize their daily activities, set reminders, and track their progress in completing tasks efficiently.',
     },
   ];
 
-  // Posisi yang tidak beraturan untuk setiap card
   const positions: Position[] = [
-    { left: 8, top: 400 },
-    { left: 70, top: 400 },
-    { left: 35, top: 500 },
-    { left: 65, top: 490 },
-    { left: 10, top: 600 },
-    { left: 38, top: 650 },
-    { left: 20, top: 730 },
-    { left: 50, top: 810 },
+    { left: 5, top: 300 },
+    { left: 60, top: 400 },
+    { left: 30, top: 600 },
+    { left: 40, top: 600 },
+    { left: 20, top: 800 },
+    { left: 70, top: 800 },
+    { left: 35, top: 1000 },
+    { left: 8, top: 1000 },
+    { left: 75, top: 1200 },
   ];
 
   return (
@@ -178,7 +203,7 @@ const ProjectSection: React.FC = () => {
       </section>
 
       {/* Projects Section with Scroll Effect */}
-      <section className="relative px-6" style={{ height: '600px' }}>
+      <section className="relative px-6" style={{ height: '900px' }}>
         {projects.map((project, index) => (
           <ProjectCard
             key={index}
