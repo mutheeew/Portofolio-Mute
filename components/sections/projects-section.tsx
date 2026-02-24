@@ -179,7 +179,7 @@ export function ProjectsSection() {
                 className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-105"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Let's Build Something Amazing! 🎯
+                {"Let's Build Something Amazing! 🎯"}
               </Button>
             </div>
           </Card>

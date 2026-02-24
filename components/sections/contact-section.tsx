@@ -180,11 +180,11 @@ export function ContactSection() {
         <div className="text-center mb-16">
           <div className="inline-block mb-6">
             <h2 className="text-4xl lg:text-6xl font-bold">
-              Let's Work Together
+              {"Let's Work Together"}
             </h2>
           </div>
           <p className="text-sm lg:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Ready to bring your project to life? Let's discuss how I can help you create something amazing. I'm available at working time (9 am - 6 pm). I'm always excited about new challenges!
+            {"Ready to bring your project to life? Let's discuss how I can help you create something amazing. I'm available at working time (9 am - 6 pm). I'm always excited about new challenges!"}
           </p>
           <div className="flex justify-center">
             <a href="https://wa.me/6285189989891" target="_blank" rel="noopener noreferrer" className="mt-6 bg-gradient-to-t from-blue-600 to-blue-900 hover:bg-blue-700 text-white px-7 py-3.5 rounded-full font-semibold flex items-center gap-3 transition-all transform hover:scale-105 shadow-lg text-sm">

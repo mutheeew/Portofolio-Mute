@@ -165,7 +165,7 @@ export function ChartsDemo() {
           <TabsContent value="skills">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Skills Pie Chart */}
-              <Card>
+              {/* <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <PieChart className="w-4 h-4" />
@@ -192,10 +192,10 @@ export function ChartsDemo() {
                     </RechartsPieChart>
                   </ResponsiveContainer>
                 </CardContent>
-              </Card>
+              </Card> */}
 
               {/* Skills Progress */}
-              <Card>
+              {/* <Card>
                 <CardHeader>
                   <CardTitle>Skills Proficiency</CardTitle>
                 </CardHeader>
@@ -218,7 +218,7 @@ export function ChartsDemo() {
                     </div>
                   ))}
                 </CardContent>
-              </Card>
+              </Card> */}
             </div>
           </TabsContent>
 
