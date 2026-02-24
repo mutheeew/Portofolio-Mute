@@ -9,9 +9,9 @@ import { ThemeToggle } from "./theme-toggle"
 
 const navigation = [
   { name: "Home", href: "#home", icon: Code },
-  { name: "Skills Demo", href: "#skills", icon: Database },
+  { name: "Skills", href: "#skills", icon: Database },
   { name: "Projects", href: "#projects", icon: FolderOpen },
-  { name: "About", href: "#summary", icon: User },
+  // { name: "About", href: "#summary", icon: User },
   { name: "Contact", href: "#contact", icon: Mail },
 ]
 
@@ -37,8 +37,9 @@ export function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <div className="container flex h-16 items-center justify-between relative">
-        <div className="hidden md:flex items-center pl-2">
+      <div className="container flex h-16 items-center px-6 lg:px-12">
+        
+        <div className="hidden md:flex items-center flex-shrink-0 mr-8">
           <Link href="/" className="flex items-center space-x-3 group">
             <span className="font-bold text-lg bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
               Mutheeew
@@ -46,7 +47,7 @@ export function Navbar() {
           </Link>
         </div>
 
-        <nav className="hidden md:flex items-center space-x-8 text-sm font-medium absolute left-1/2 transform -translate-x-1/2">
+        <nav className="hidden md:flex flex-1 items-center justify-center space-x-8 text-sm font-medium">
           {navigation.filter(item => item.name !== "Contact").map((item) => (
             <Link
               key={item.name}
@@ -58,7 +59,18 @@ export function Navbar() {
             </Link>
           ))}
         </nav>
-        
+
+        <div className="hidden md:flex items-center flex-shrink-0 ml-8">
+          <Link
+            href="#contact"
+            className="relative group transition-colors text-foreground/70 dark:text-slate-300 hover:text-foreground dark:hover:text-white py-2 text-sm font-medium"
+          >
+            <span className="relative z-10">Contact</span>
+            <div className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-primary to-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+          </Link>
+          {/* <ThemeToggle /> */}
+        </div>
+
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
             <Button
@@ -102,30 +114,19 @@ export function Navbar() {
             </div>
           </SheetContent>
         </Sheet>
-        
-        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end md:flex-none">
-          <div className="w-full flex-1 md:hidden">
-            <Link href="/" className="flex items-center space-x-3 group">
-              <div className="relative">
-                <Code className="h-6 w-6 text-primary" />
-                <Sparkles className="absolute -top-1 -right-1 h-3 w-3 text-yellow-500 animate-pulse" />
-              </div>
-              <span className="font-bold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-                Portfolio
-              </span>
-            </Link>
-          </div>
-          <nav className="flex items-center space-x-4">
-            <Link
-              href="#contact"
-              className="hidden md:inline-flex relative group transition-colors text-foreground/70 dark:text-slate-300 hover:text-foreground dark:hover:text-white py-2 text-sm font-medium"
-            >
-              <span className="relative z-10">Contact</span>
-              <div className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-primary to-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
-            </Link>
-            {/* <ThemeToggle /> */}
-          </nav>
+
+        <div className="flex-1 md:hidden">
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="relative">
+              <Code className="h-6 w-6 text-primary" />
+              <Sparkles className="absolute -top-1 -right-1 h-3 w-3 text-yellow-500 animate-pulse" />
+            </div>
+            <span className="font-bold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+              Portfolio
+            </span>
+          </Link>
         </div>
+
       </div>
     </header>
   )

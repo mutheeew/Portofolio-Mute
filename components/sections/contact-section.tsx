@@ -144,7 +144,6 @@ export function ContactSection() {
 
   async function onSubmit(values: ContactFormValues) {
     try {
-      // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1500))
       
       setSubmissionStatus({
@@ -188,9 +187,9 @@ export function ContactSection() {
             Ready to bring your project to life? Let's discuss how I can help you create something amazing. I'm available at working time (9 am - 6 pm). I'm always excited about new challenges!
           </p>
           <div className="flex justify-center">
-            <button className="mt-6 bg-gradient-to-t from-blue-600 to-blue-900 hover:bg-blue-700 text-white px-7 py-3.5 rounded-full font-semibold flex items-center gap-3 transition-all transform hover:scale-105 shadow-lg text-sm">
+            <a href="https://wa.me/6285189989891" target="_blank" rel="noopener noreferrer" className="mt-6 bg-gradient-to-t from-blue-600 to-blue-900 hover:bg-blue-700 text-white px-7 py-3.5 rounded-full font-semibold flex items-center gap-3 transition-all transform hover:scale-105 shadow-lg text-sm">
                 Hello@Mute
-            </button>
+            </a>
           </div>
         </div>
 
