@@ -1,33 +1,18 @@
 'use client'
-import { Shield } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
 import {
   FaReact,
-  FaLaughBeam,
-  FaFingerprint,
-  FaChartLine,
   FaClipboardList,
-  FaFlask,
-  FaPenNib,
   FaBootstrap,
   FaShieldAlt,
 } from 'react-icons/fa';
 import { 
-  SiReact,
   SiNextdotjs,
   SiTypescript,
-  SiJavascript,
   SiTailwindcss,
-  SiBootstrap,
   SiFramer,
-  SiMui,
   SiReactrouter,
-  SiGit,
-  SiGithub,
-  SiVercel,
-  SiNetlify,
-  SiZod,
   SiAxios,
   SiRadixui,
   SiReactquery,
@@ -45,15 +30,17 @@ interface ProjectCardProps {
   description: string;
   position: Position;
   index: number;
+  link?: string;
 }
 
 interface Project {
   title: string;
   icons: React.ReactNode[];
   description: string;
+  link?: string;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, icons, description, position, index }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, icons, description, position, index, link }) => {
   const [translateY, setTranslateY] = useState<number>(0);
   const [opacity, setOpacity] = useState<number>(0);
   const [scale, setScale] = useState<number>(0.8);
@@ -62,11 +49,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, icons, description, po
   useEffect(() => {
     const handleScroll = (): void => {
       const scrolled = window.scrollY;
-      // Setiap card bergerak dengan kecepatan berbeda (negatif untuk naik ke atas)
       const speed = 0.2 + (index % 3) * 0.1;
       setTranslateY(-scrolled * speed);
 
-      // Menghitung opacity dan scale berdasarkan posisi scroll
       const cardTopPosition = position.top;
       const windowHeight = window.innerHeight;
       const scrollTrigger = cardTopPosition - windowHeight + 200;
@@ -81,7 +66,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, icons, description, po
       }
     };
 
-    handleScroll(); // Initial call
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [index, position.top]);
@@ -91,6 +76,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, icons, description, po
       className="absolute bg-white rounded-lg shadow-xl p-8 transition-all duration-700 ease-out hover:scale-105 hover:shadow-2xl cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={() => link && window.open(link, '_blank')}
       style={{
         left: `${position.left}%`,
         top: `${position.top}px`,
@@ -135,7 +121,7 @@ const ProjectSection: React.FC = () => {
       title: 'Soundbox Dashboard',
       icons: [<SiNextdotjs key="1" />, <SiFramer key="2" />, <SiTailwindcss key="3" />, <SiTypescript key="4" />, <FaShieldAlt key="5" />],
       description:
-        'KETAKUMA, A BEAR WHO LIVES FOR MOVING AGGRESSIVELY, AND HIS FRIEND KETAWAN.',
+        'A web-based management dashboard designed to configure and control soundbox devices, smart POS terminals, and payment devices. The dashboard enables remote settings for sound configuration, language preferences, advertising content, and device parameters, providing centralized control and efficient management across deployed payment terminals.',
     },
     {
       title: 'Service Hub Dashboard',
@@ -147,13 +133,13 @@ const ProjectSection: React.FC = () => {
       title: 'Sales Dashboard',
       icons: [<SiNextdotjs key="1" />, <SiRadixui key="2" />, <SiReactquery key="3" />, <SiReacttable key="4" />, <SiTailwindcss key="5" />, <SiTypescript key="6" />, <FaShieldAlt key="7" />, "Orval"],
       description:
-        'BUILDING TRUST THROUGH TRANSPARENT AND RELIABLE FINANCIAL SOLUTIONS.',
+        'A web-based sales dashboard designed to support sales operations by managing sales data, tracking progress, and handling registration, approval, and data entry workflows. The dashboard provides clear visibility into sales activities and ensures structured, efficient, and traceable operational processes.',
     },
     {
       title: 'DNA - Company Profile',
       icons: [<FaClipboardList key="1" />],
       description:
-        'RED AND GREEN CO.,LTD IS THE TOTAL COORDINATOR OF THE PRODUCT PLANNING, BRANDING, AND CIRCULATION TO SALES.',
+        'A responsive informational website built to highlight company identity, product categories, mission & vision, and contact channels for stakeholders and potential partners in the chemical distribution sector.',
     },
     {
       title: 'Dumbflix',
@@ -166,7 +152,8 @@ const ProjectSection: React.FC = () => {
       icons: [<FaReact key="1" />],
       description:
         'A healthcare website that provides various healtcare servies to users in Indonesia, such as COVID-19 information, health tips, and online consultation with doctors.',
-    },
+      link: "https://consultation-web.vercel.app/"
+      },
     {
       title: 'Ways To Do App',
       icons: [<FaReact key="1" />],
@@ -189,8 +176,6 @@ const ProjectSection: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background scroll-smooth">
-
-      {/* Hero Section */}
       <section id="projects" className="pt-5 pb-20 px-6">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-6xl md:text-7xl font-bold mb-6 tracking-tight">
@@ -202,7 +187,6 @@ const ProjectSection: React.FC = () => {
         </div>
       </section>
 
-      {/* Projects Section with Scroll Effect */}
       <section className="relative px-6" style={{ height: '900px' }}>
         {projects.map((project, index) => (
           <ProjectCard
@@ -212,6 +196,7 @@ const ProjectSection: React.FC = () => {
             description={project.description}
             position={positions[index]}
             index={index}
+            link={project.link}
           />
         ))}
       </section>
