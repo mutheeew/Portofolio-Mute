@@ -39,9 +39,10 @@ export function Navbar() {
     >
       <div className="container flex h-16 items-center px-6 lg:px-12">
         
-        <div className="hidden md:flex items-center flex-shrink-0 mr-8">
+        {/* Logo - Left */}
+        <div className="flex items-center flex-shrink-0 mr-8">
           <Link href="/" className="flex items-center space-x-3 group">
-            <span className="font-bold text-lg bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+            <span className="font-bold text-sm md:text-lg bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
               Mutheeew
             </span>
           </Link>
@@ -71,53 +72,48 @@ export function Navbar() {
           {/* <ThemeToggle /> */}
         </div>
 
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="mr-2 md:hidden hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors"
-            >
-              <Menu className="h-5 w-5" />
-              <span className="sr-only">Toggle Menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="left" className="pr-0 bg-background/95 dark:bg-slate-950/95 backdrop-blur-xl border-r border-slate-200 dark:border-slate-800">
-            <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-            <Link
-              href="/"
-              className="flex items-center space-x-3 group mb-8"
-              onClick={() => setIsOpen(false)}
-            >
-              <span className="font-bold p-3 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-                Mutheeew
-              </span>
-            </Link>
-            <div className="flex flex-col space-y-4">
-              {navigation.map((item) => {
-                const IconComponent = item.icon
-                return (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setIsOpen(false)}
-                    className="flex items-center space-x-3 text-sm font-medium transition-all text-foreground/70 dark:text-slate-300 hover:text-primary dark:hover:text-white hover:bg-primary/10 dark:hover:bg-primary/20 p-3 rounded-lg group"
-                  >
-                    <IconComponent className="h-4 w-4 group-hover:scale-110 transition-transform" />
-                    <span>{item.name}</span>
-                  </Link>
-                )
-              })}
-            </div>
-          </SheetContent>
-        </Sheet>
-
-        <div className="ml-auto mr-4 md:hidden">
-          <Link href="/" className="flex items-center space-x-3 group">
-            <span className="font-bold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-              Mutheeew
-            </span>
-          </Link>
+        {/* Mobile Menu Button - Right */}
+        <div className="md:hidden ml-auto">
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors"
+              >
+                <Menu className="h-5 w-5" />
+                <span className="sr-only">Toggle Menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="pr-0 bg-background/95 dark:bg-slate-950/95 backdrop-blur-xl border-r border-slate-200 dark:border-slate-800">
+              <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+              <Link
+                href="/"
+                className="flex items-center space-x-3 group mb-8"
+                onClick={() => setIsOpen(false)}
+              >
+                <span className="font-bold p-3 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+                  Mutheeew
+                </span>
+              </Link>
+              <div className="flex flex-col space-y-4">
+                {navigation.map((item) => {
+                  const IconComponent = item.icon
+                  return (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className="flex items-center space-x-3 text-sm font-medium transition-all text-foreground/70 dark:text-slate-300 hover:text-primary dark:hover:text-white hover:bg-primary/10 dark:hover:bg-primary/20 p-3 rounded-lg group"
+                    >
+                      <IconComponent className="h-4 w-4 group-hover:scale-110 transition-transform" />
+                      <span>{item.name}</span>
+                    </Link>
+                  )
+                })}
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
 
       </div>
