@@ -34,18 +34,18 @@ export default function ProfileSection() {
             <div className="relative min-h-screen flex items-center mx-auto px-4 sm:px-8 py-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 sm:gap-8 items-center w-full">
                 
-                <div className="lg:col-span-4 md:col-span-2 flex flex-col justify-between py-10 lg:py-20">
-                    <div>
+                <div className="lg:col-span-4 md:col-span-2 flex flex-col justify-between min-h-96 lg:min-h-full py-10 lg:py-20">
+                    <div className="space-y-6">
                         <h1 className="text-6xl lg:text-8xl font-black text-gray-900 leading-none tracking-tight italic">
                             {"I'M"}<br />MUTE
                         </h1>
-                        <a href="https://wa.me/6285189989891" target="_blank" rel="noopener noreferrer" className="mt-6 bg-gradient-to-t from-blue-600 to-blue-900 hover:bg-blue-700 text-white px-7 py-3.5 rounded-full font-semibold flex items-center gap-3 transition-all transform hover:scale-105 shadow-lg text-sm w-fit">
+                        <a href="https://wa.me/6285189989891" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-t from-blue-600 to-blue-900 hover:bg-blue-700 text-white px-7 py-3.5 rounded-full font-semibold flex items-center gap-3 transition-all transform hover:scale-105 shadow-lg text-sm w-fit">
                             {"Let's Discuss"}
                             <ArrowRight className="w-4 h-4" />
                         </a>
                     </div>
                     
-                    <div className="mt-auto">
+                    <div>
                         <p className="text-gray-700 text-lg leading-relaxed">
                             Hello, {"I'm"} <span className="font-bold text-gray-900">Muthmainnah</span>, a Frontend Web Developer committed to delivering high-quality, maintainable code and developing fast, responsive web applications that provide exceptional user experiences.
                         </p>
@@ -65,7 +65,7 @@ export default function ProfileSection() {
                     </div>
                 </div>
                         
-                <div className="lg:col-span-4 md:col-span-2 flex flex-col justify-between py-10 lg:py-20">
+                <div className="lg:col-span-4 md:col-span-2 flex flex-col justify-between min-h-96 lg:min-h-full py-10 lg:py-20">
                     <div className="space-y-8">
                         <div>
                             <h3 className="text-lg font-bold text-gray-900 mb-4">Follow Me</h3>
@@ -92,7 +92,7 @@ export default function ProfileSection() {
                         </p>
                     </div>
                     
-                    <div className="mt-auto">
+                    <div>
                         <h2 className="text-5xl lg:text-6xl font-black text-gray-900 leading-none tracking-tight">
                             FRONTEND<br />
                             WEB<br />

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, Code, Database, FolderOpen, User, Mail, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { ThemeToggle } from "./theme-toggle"
 
 const navigation = [
@@ -83,6 +83,7 @@ export function Navbar() {
             </Button>
           </SheetTrigger>
           <SheetContent side="left" className="pr-0 bg-background/95 dark:bg-slate-950/95 backdrop-blur-xl border-r border-slate-200 dark:border-slate-800">
+            <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
             <Link
               href="/"
               className="flex items-center space-x-3 group mb-8"
