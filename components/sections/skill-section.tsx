@@ -83,7 +83,7 @@ export default function SkillSection() {
     <section id="skills" className="w-full py-12 bg-background">
       {/* Stats Section */}
       <div className="w-full px-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
           {stats.map((stat, index) => (
             <div
               key={index}
@@ -103,7 +103,7 @@ export default function SkillSection() {
       {/* Skills Table */}
       <div className="w-full px-4 mt-16">
         <div className="w-full py-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-6">
             {skills.map((skill, index) => {
               const Icon = skill.icon
               return (

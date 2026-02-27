@@ -73,7 +73,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, icons, description, po
 
   return (
     <div
-      className="absolute bg-white rounded-lg shadow-xl p-8 transition-all duration-700 ease-out hover:scale-105 hover:shadow-2xl cursor-pointer"
+      className="hidden md:block absolute bg-white rounded-lg shadow-xl p-8 transition-all duration-700 ease-out hover:scale-105 hover:shadow-2xl cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => link && window.open(link, '_blank')}
@@ -101,7 +101,29 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, icons, description, po
       <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
     </div>
   );
-};
+}
+
+const ProjectCardMobile: React.FC<{title: string; icons: React.ReactNode[]; description: string; link?: string}> = ({ title, icons, description, link }) => {
+  return (
+    <div
+      className="md:hidden bg-white rounded-lg shadow-lg p-6 transition-all hover:shadow-xl cursor-pointer w-full"
+      onClick={() => link && window.open(link, '_blank')}
+    >
+      <div className="mb-4">
+        <div className="w-12 h-12 bg-gray-200 rounded-full mb-4"></div>
+      </div>
+      <h2 className="text-2xl font-bold mb-3 tracking-tight uppercase">
+        {title}
+      </h2>
+      <div className="flex gap-2 mb-3 text-lg font-semibold text-gray-700">
+        {icons.map((icon, i) => (
+          <span key={i}>{icon}</span>
+        ))}
+      </div>
+      <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
+    </div>
+  );
+}
 
 const ProjectSection: React.FC = () => {
   const projects: Project[] = [
@@ -187,7 +209,8 @@ const ProjectSection: React.FC = () => {
         </div>
       </section>
 
-      <section className="relative px-6" style={{ height: '900px' }}>
+      {/* Desktop version with absolute positioning */}
+      <section className="hidden md:block relative px-6" style={{ height: '900px' }}>
         {projects.map((project, index) => (
           <ProjectCard
             key={index}
@@ -199,6 +222,21 @@ const ProjectSection: React.FC = () => {
             link={project.link}
           />
         ))}
+      </section>
+
+      {/* Mobile version with normal flow */}
+      <section className="md:hidden px-6 pb-20">
+        <div className="space-y-4">
+          {projects.map((project, index) => (
+            <ProjectCardMobile
+              key={index}
+              title={project.title}
+              icons={project.icons}
+              description={project.description}
+              link={project.link}
+            />
+          ))}
+        </div>
       </section>
 
     </div>

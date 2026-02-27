@@ -88,12 +88,8 @@ export function Navbar() {
               className="flex items-center space-x-3 group mb-8"
               onClick={() => setIsOpen(false)}
             >
-              <div className="relative">
-                <Code className="h-6 w-6 text-primary" />
-                <Sparkles className="absolute -top-1 -right-1 h-3 w-3 text-yellow-500 animate-pulse" />
-              </div>
-              <span className="font-bold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-                Portfolio
+              <span className="font-bold p-3 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+                Mutheeew
               </span>
             </Link>
             <div className="flex flex-col space-y-4">
@@ -115,14 +111,10 @@ export function Navbar() {
           </SheetContent>
         </Sheet>
 
-        <div className="flex-1 md:hidden">
+        <div className="ml-auto mr-4 md:hidden">
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="relative">
-              <Code className="h-6 w-6 text-primary" />
-              <Sparkles className="absolute -top-1 -right-1 h-3 w-3 text-yellow-500 animate-pulse" />
-            </div>
             <span className="font-bold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-              Portfolio
+              Mutheeew
             </span>
           </Link>
         </div>

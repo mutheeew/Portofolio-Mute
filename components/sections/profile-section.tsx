@@ -5,7 +5,7 @@ import Profile2 from "@/assets/images/profile-mute.png";
 
 export default function ProfileSection() {
     return (
-        <div className="h-screen bg-gradient-to-t from-blue-100 via-blue-50 to-white relative overflow-hidden">
+        <div className="h-screen bg-gradient-to-t from-blue-100 via-blue-50 to-white relative overflow-hidden w-full max-w-full">
             <div 
                 className="absolute inset-0" 
                 style={{
@@ -18,7 +18,7 @@ export default function ProfileSection() {
             />
         
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden">
-                <h2 className="text-[180px] font-black text-gray-300/40 leading-none whitespace-nowrap select-none">
+                <h2 className="text-5xl sm:text-8xl md:text-[150px] lg:text-[180px] font-black text-gray-300/40 leading-none select-none text-center px-4">
                 FRONTEND DEV
                 </h2>
             </div>
@@ -31,10 +31,10 @@ export default function ProfileSection() {
                 }}
             />
             
-            <div className="relative h-full flex items-center mx-auto px-8 py-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 items-center w-full">
+            <div className="relative min-h-screen flex items-center mx-auto px-4 sm:px-8 py-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 sm:gap-8 items-center w-full">
                 
-                <div className="lg:col-span-4 md:col-span-2 flex flex-col justify-between h-auto lg:h-full py-10 lg:py-20">
+                <div className="lg:col-span-4 md:col-span-2 flex flex-col justify-between py-10 lg:py-20">
                     <div>
                         <h1 className="text-6xl lg:text-8xl font-black text-gray-900 leading-none tracking-tight italic">
                             {"I'M"}<br />MUTE
@@ -52,7 +52,7 @@ export default function ProfileSection() {
                     </div>
                 </div>
                             
-                <div className="lg:col-span-4 md:col-span-2 flex justify-center items-end h-full pb-0 min-h-96">
+                <div className="lg:col-span-4 md:col-span-2 flex justify-center items-end pb-0 min-h-96">
                     <div className="relative w-80 md:w-96 lg:w-full lg:max-w-md mb-0">
                         <div className="relative z-10 w-full aspect-auto">
                             <Image
@@ -65,7 +65,7 @@ export default function ProfileSection() {
                     </div>
                 </div>
                         
-                <div className="lg:col-span-4 md:col-span-2 flex flex-col justify-between h-auto lg:h-full py-10 lg:py-20">
+                <div className="lg:col-span-4 md:col-span-2 flex flex-col justify-between py-10 lg:py-20">
                     <div className="space-y-8">
                         <div>
                             <h3 className="text-lg font-bold text-gray-900 mb-4">Follow Me</h3>
