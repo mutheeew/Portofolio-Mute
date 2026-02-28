@@ -1,52 +1,39 @@
 import { 
   SiReact,
-  SiNextdotjs,
-  SiTypescript,
-  SiJavascript,
-  SiTailwindcss,
-  SiBootstrap,
-  SiFramer,
-  SiMui,
-  SiReactrouter,
-  SiGit,
-  SiGithub,
-  SiVercel,
-  SiNetlify,
-  SiZod,
-  SiAxios,
+SiNextdotjs,
+SiTypescript,
+SiJavascript,
+SiTailwindcss,
+SiBootstrap,
+SiFramer,
+SiMui,
+SiReactrouter,
+SiGit,
+SiGithub,
+SiVercel,
+SiNetlify,
+SiZod,
+SiAxios,
 } from "react-icons/si"
 import { HiDotsHorizontal } from "react-icons/hi"
-
 import { 
-  Code2, 
-  Sparkles,
-  Component,
-  Calendar,
-  Database,
-  Table,
-  FileCheck,
-  FileText,
-  Shield,
-  Key,
+Code2, 
+Sparkles,
+Component,
+Calendar,
+Database,
+Table,
+FileCheck,
+FileText,
+Shield,
+Key,
 } from "lucide-react"
 
 const stats = [
-  {
-    value: "2+",
-    label: "Years Experience"
-  },
-  {
-    value: "10+",
-    label: "Project Completed"
-  },
-  {
-    value: "9/5",
-    label: "Support Available"
-  },
-  {
-    value: "96%",
-    label: "Clients Satisfaction"
-  }
+  { value: "2+", label: "Years Experience" },
+  { value: "10+", label: "Project Completed" },
+  { value: "9/5", label: "Support Available" },
+  { value: "96%", label: "Clients Satisfaction" }
 ]
 
 const skills = [
@@ -80,27 +67,31 @@ const skills = [
 
 export default function SkillSection() {
   return (
-    <section id="skills" className="w-full py-12 bg-background">
-      {/* Stats Section */}
-      <div className="w-full px-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center justify-center text-center"
-            >
-              <div className="text-4xl md:text-5xl font-bold text-foreground mb-2">
-                {stat.value}
+    <section id="skills" className="relative w-full py-12 bg-background">
+      <div className="w-full flex justify-center overflow-hidden">
+        <h2 className="absolute inset-x-0 top-52 sm:top-28 text-center text-8xl md:text-[150px] lg:text-[180px] font-black text-gray-300/40 leading-none select-none pointer-events-none">
+          SKILL
+        </h2>
+
+        <div className="relative w-full px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center justify-center text-center"
+              >
+                <div className="text-4xl md:text-5xl font-bold text-foreground mb-2">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  {stat.label}
+                </div>
               </div>
-              <div className="text-sm text-muted-foreground">
-                {stat.label}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Skills Table */}
       <div className="w-full px-4 mt-16">
         <div className="w-full py-8">
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-6">
