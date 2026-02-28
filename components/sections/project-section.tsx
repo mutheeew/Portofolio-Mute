@@ -104,16 +104,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, icons, description, po
 }
 
 const ProjectCardMobile: React.FC<{title: string; icons: React.ReactNode[]; description: string; link?: string}> = ({ title, icons, description, link }) => {
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
   return (
     <div
       className="md:hidden bg-white rounded-lg shadow-lg p-6 transition-all hover:shadow-xl cursor-pointer w-full"
       onClick={() => link && window.open(link, '_blank')}
     >
       <div className="flex mb-4 gap-4">
+      <div className="flex mb-4 gap-4">
         <div className="w-12 h-12 bg-gray-200 rounded-full mb-4"></div>
         <div className="">
           <h2 className="text-xl font-bold tracking-tight uppercase">
-            {title.length > 15 ? title.slice(0, 20) + "..." : title}
+            {title.length > 15 ? title.slice(0, 17) + "..." : title}
           </h2>
           <div className="flex gap-2 text-sm font-semibold text-gray-700">
             {icons.map((icon, i) => (
@@ -122,9 +124,19 @@ const ProjectCardMobile: React.FC<{title: string; icons: React.ReactNode[]; desc
           </div>
         </div>
       </div>
-      
-      <p className="text-sm text-gray-600 leading-relaxed">{description.length > 100 ? description.slice(0, 90) + "..." : description}</p>
-    </div>
+      <p 
+        className="text-sm text-gray-600 leading-relaxed cursor-pointer"
+        onClick={() => setIsExpanded(!isExpanded)}
+      >
+        {isExpanded 
+          ? description 
+          : (description.length > 80 
+              ? <>{description.slice(0, 80)}<span className="text-blue-500 font-medium"> ...</span></> 
+              : description
+            )
+        }
+      </p>
+      </div>
   );
 }
 
@@ -206,6 +218,7 @@ const ProjectSection: React.FC = () => {
           <h2 className="text-6xl md:text-7xl font-bold mb-6 tracking-tight">
             SELECTED PROJECTS
           </h2>
+          <p className="text-lg sm:ext-xl text-gray-600 max-w-2xl mx-auto">
           <p className="text-lg sm:ext-xl text-gray-600 max-w-2xl mx-auto">
             Explore our diverse portfolio of innovative projects and creative solutions
           </p>
