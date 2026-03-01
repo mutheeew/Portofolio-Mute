@@ -6,6 +6,7 @@ import { ContactSection } from "@/components/sections/contact-section";
 import ProfileSection from "@/components/sections/profile-section";
 import SkillSection from "@/components/sections/skill-section";
 import ProjectSection from "@/components/sections/project-section";
+import CareerPathSection from "@/components/sections/career-path";
 export default function Home() {
   return (
     <main className="flex flex-col">
@@ -16,6 +17,7 @@ export default function Home() {
       <ProjectSection/>
       {/* <ProjectsSection /> */}
       {/* <SummarySection /> */}
+      <CareerPathSection/>
       <ContactSection />
     </main>
   );

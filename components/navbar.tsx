@@ -11,7 +11,7 @@ const navigation = [
   { name: "Home", href: "#home", icon: Code },
   { name: "Skills", href: "#skills", icon: Database },
   { name: "Projects", href: "#projects", icon: FolderOpen },
-  // { name: "About", href: "#summary", icon: User },
+  { name: "Journey", href: "#career", icon: User },
   { name: "Contact", href: "#contact", icon: Mail },
 ]
 
@@ -31,17 +31,17 @@ export function Navbar() {
 
   return (
     <header 
-      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
+      className={`fixed top-0 z-50 w-full max-w-full transition-all duration-300 ${
         scrolled 
           ? 'bg-background/95 dark:bg-slate-950/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-lg' 
           : 'bg-transparent'
       }`}
     >
-      <div className="container flex h-16 items-center px-6 lg:px-12">
+      <div className="w-full flex h-16 items-center px-6 lg:px-12">
         
         {/* Logo - Left */}
         <div className="flex items-center flex-shrink-0 mr-8">
-          <Link href="/" className="flex items-center space-x-3 group">
+          <Link href="/" className="flex items-center space-x-3 group flex-shrink-0">
             <span className="font-bold text-sm md:text-lg bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
               Mutheeew
             </span>
@@ -61,10 +61,10 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center flex-shrink-0 ml-8">
+        <div className="hidden md:flex flex-shrink-0">
           <Link
             href="#contact"
-            className="relative group transition-colors text-foreground/70 dark:text-slate-300 hover:text-foreground dark:hover:text-white py-2 text-sm font-medium"
+            className="transition-colors text-foreground/70 dark:text-slate-300 hover:text-foreground dark:hover:text-white py-2 text-sm font-medium"
           >
             <span className="relative z-10">Contact</span>
             <div className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-primary to-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
