@@ -14,6 +14,9 @@ SiVercel,
 SiNetlify,
 SiZod,
 SiAxios,
+SiGitlab,
+SiVite,
+SiSupabase,
 } from "react-icons/si"
 import { HiDotsHorizontal } from "react-icons/hi"
 import { 
@@ -60,6 +63,9 @@ const skills = [
   { name: "NextAuth.js", icon: Key },
   { name: "Git", icon: SiGit },
   { name: "Github", icon: SiGithub },
+  { name: "Gitlab", icon: SiGitlab },
+  { name: "Vite", icon: SiVite },
+  { name: "Supabase", icon: SiSupabase },
   { name: "Vercel", icon: SiVercel },
   { name: "Netlify", icon: SiNetlify },
   { name: "And More...", icon: HiDotsHorizontal },

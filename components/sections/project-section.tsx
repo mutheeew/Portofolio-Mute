@@ -201,7 +201,8 @@ const ProjectSection: React.FC = () => {
       icons: [<FaClipboardList key="1" />],
       description:
         'A responsive informational website built to highlight company identity, product categories, mission & vision, and contact channels for stakeholders and potential partners in the chemical distribution sector.',
-    },
+      link: "https://www.diannaturaagrifarma.com"
+      },
     {
       title: 'Dumbflix',
       icons: [<FaReact key="1" />],
@@ -213,7 +214,6 @@ const ProjectSection: React.FC = () => {
       icons: [<FaReact key="1" />],
       description:
         'A healthcare website that provides various healtcare servies to users in Indonesia, such as COVID-19 information, health tips, and online consultation with doctors.',
-      link: "https://consultation-web.vercel.app/"
       },
     {
       title: 'Ways To Do App',
@@ -243,7 +243,6 @@ const ProjectSection: React.FC = () => {
           <h2 className="text-6xl md:text-7xl font-bold mb-6 tracking-tight">
             SELECTED PROJECTS
           </h2>
-          <p className="text-lg sm:ext-xl text-gray-600 max-w-2xl mx-auto">
           <p className="text-lg sm:ext-xl text-gray-600 max-w-2xl mx-auto">
             Explore our diverse portfolio of innovative projects and creative solutions
           </p>
