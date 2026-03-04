@@ -6,6 +6,7 @@ import {
   FaClipboardList,
   FaBootstrap,
   FaShieldAlt,
+  FaExternalLinkAlt,
 } from 'react-icons/fa';
 import { 
   SiNextdotjs,
@@ -17,6 +18,7 @@ import {
   SiRadixui,
   SiReactquery,
   SiReacttable,
+  SiSupabase,
 } from "react-icons/si"
 
 interface Position {
@@ -85,10 +87,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, icons, description, po
         transform: `translateY(${translateY}px) scale(${scale})`,
         opacity: opacity,
         zIndex: isHovered ? 9999 : index,
+        cursor: link ? 'pointer' : 'default',
       }}
     >
-      <div className="mb-4">
-        <div className="w-12 h-12 bg-gray-200 rounded-full mb-4"></div>
+      <div className="mb-4 flex items-center justify-between">
+        <div className="w-12 h-12 bg-gray-200 rounded-full"></div>
+        {link && (
+          <span className="flex items-center gap-1.5 text-xs font-semibold text-blue-600 bg-blue-50 border border-blue-200 rounded-full px-3 py-1">
+            <FaExternalLinkAlt className="text-[10px]" />
+            Live Site
+          </span>
+        )}
       </div>
       <h2 className="text-4xl font-bold mb-4 tracking-tight uppercase">
         {title}
@@ -107,17 +116,25 @@ const ProjectCardMobile: React.FC<{title: string; icons: React.ReactNode[]; desc
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
   return (
     <div
-      className="md:hidden bg-white rounded-lg shadow-lg p-6 transition-all hover:shadow-xl cursor-pointer w-full"
+      className="md:hidden bg-white rounded-lg shadow-lg p-6 transition-all hover:shadow-xl w-full"
+      style={{ cursor: link ? 'pointer' : 'default' }}
       onClick={() => link && window.open(link, '_blank')}
     >
-      <div className="flex mb-4 gap-4">
-      <div className="flex mb-4 gap-4">
-        <div className="w-12 h-12 bg-gray-200 rounded-full mb-4"></div>
-        <div className="">
-          <h2 className="text-xl font-bold tracking-tight uppercase">
-            {title.length > 15 ? title.slice(0, 17) + "..." : title}
-          </h2>
-          <div className="flex gap-2 text-sm font-semibold text-gray-700">
+      <div className="flex mb-4 gap-4 items-start">
+        <div className="w-12 h-12 bg-gray-200 rounded-full flex-shrink-0"></div>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 flex-wrap">
+            <h2 className="text-xl font-bold tracking-tight uppercase">
+              {title.length > 15 ? title.slice(0, 17) + "..." : title}
+            </h2>
+            {link && (
+              <span className="flex items-center gap-1 text-[10px] font-semibold text-blue-600 bg-blue-50 border border-blue-200 rounded-full px-2 py-0.5 whitespace-nowrap">
+                <FaExternalLinkAlt className="text-[8px]" />
+                Live
+              </span>
+            )}
+          </div>
+          <div className="flex gap-2 text-sm font-semibold text-gray-700 mt-1">
             {icons.map((icon, i) => (
               <span key={i}>{icon}</span>
             ))}
@@ -125,8 +142,8 @@ const ProjectCardMobile: React.FC<{title: string; icons: React.ReactNode[]; desc
         </div>
       </div>
       <p 
-        className="text-sm text-gray-600 leading-relaxed cursor-pointer"
-        onClick={() => setIsExpanded(!isExpanded)}
+        className="text-sm text-gray-600 leading-relaxed"
+        onClick={(e) => { e.stopPropagation(); setIsExpanded(!isExpanded); }}
       >
         {isExpanded 
           ? description 
@@ -136,12 +153,18 @@ const ProjectCardMobile: React.FC<{title: string; icons: React.ReactNode[]; desc
             )
         }
       </p>
-      </div>
+    </div>
   );
 }
 
 const ProjectSection: React.FC = () => {
   const projects: Project[] = [
+    {
+      title: 'Sales Dashboard',
+      icons: [<SiNextdotjs key="1" />, <SiRadixui key="2" />, <SiReactquery key="3" />, <SiReacttable key="4" />, <SiTailwindcss key="5" />, <SiTypescript key="6" />, <FaShieldAlt key="7" />, "Orval"],
+      description:
+        'A web-based sales dashboard designed to support sales operations by managing sales data, tracking progress, and handling registration, approval, and data entry workflows. The dashboard provides clear visibility into sales activities and ensures structured, efficient, and traceable operational processes.',
+    },
     {
       title: 'eRpay Dashboard',
       icons: [<FaReact key="1" />,<FaBootstrap key="2" />,<SiReactrouter key="3" />, <SiAxios key="4" />],
@@ -167,10 +190,11 @@ const ProjectSection: React.FC = () => {
         'An integration-focused dashboard that acts as a service hub, connecting FMS and TMS with multiple systems across the ecosystem through centralized control, data flow management, and real-time operational visibility.',
     },
     {
-      title: 'Sales Dashboard',
-      icons: [<SiNextdotjs key="1" />, <SiRadixui key="2" />, <SiReactquery key="3" />, <SiReacttable key="4" />, <SiTailwindcss key="5" />, <SiTypescript key="6" />, <FaShieldAlt key="7" />, "Orval"],
+      title: 'Nikah Check',
+      icons: [<SiNextdotjs key="1" />, <SiTypescript key="2" />, <SiSupabase key="3" />,],
       description:
-        'A web-based sales dashboard designed to support sales operations by managing sales data, tracking progress, and handling registration, approval, and data entry workflows. The dashboard provides clear visibility into sales activities and ensures structured, efficient, and traceable operational processes.',
+        'is a pre-marriage compatibility questionnaire platform. Create a custom set of questions that matter to you, share the link with your potential partner, and get a detailed compatibility report — including which answers are deal-breakers and which are open for discussion.',
+      link: "https://nikahcheck.web.id/"
     },
     {
       title: 'DNA - Company Profile',
@@ -201,14 +225,15 @@ const ProjectSection: React.FC = () => {
 
   const positions: Position[] = [
     { left: 5, top: 300 },
-    { left: 60, top: 400 },
-    { left: 30, top: 600 },
-    { left: 40, top: 600 },
-    { left: 20, top: 800 },
+    { left: 30, top: 500 },
+    { left: 55, top: 700 },
+    { left: 75, top: 300 },
+    { left: 5, top: 900 },
+    { left: 25, top: 900 },
     { left: 70, top: 800 },
     { left: 35, top: 1000 },
-    { left: 8, top: 1000 },
-    { left: 75, top: 1200 },
+    { left: 60, top: 1000 },
+    { left: 12, top: 900 },
   ];
 
   return (

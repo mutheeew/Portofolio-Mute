@@ -18,10 +18,10 @@ export default function ProfileSection() {
             />
         
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden translate-y-24 md:translate-y-0">
-                <h2 className="text-5xl sm:text-8xl md:text-[150px] lg:text-[180px] font-black text-gray-300/40 leading-none select-none text-center px-4">
-                FRONTEND DEV
-                </h2>
-            </div>
+    <h2 className="text-5xl sm:text-8xl md:text-[150px] lg:text-[180px] font-black text-gray-300/40 leading-none select-none text-center px-4 w-full">
+        FRONTEND DEV
+    </h2>
+</div>
 
             <div 
                 className="hidden md:block absolute bottom-0 left-0 right-0 z-20 pointer-events-none"
