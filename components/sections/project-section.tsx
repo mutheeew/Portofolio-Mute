@@ -33,6 +33,7 @@ interface ProjectCardProps {
   position: Position;
   index: number;
   link?: string;
+  scrollY: number;
 }
 
 interface Project {
@@ -42,40 +43,35 @@ interface Project {
   link?: string;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, icons, description, position, index, link }) => {
-  const [translateY, setTranslateY] = useState<number>(0);
-  const [opacity, setOpacity] = useState<number>(0);
-  const [scale, setScale] = useState<number>(0.8);
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, icons, description, position, index, link, scrollY }) => {
+  const [isVisible, setIsVisible] = useState<boolean>(false);
   const [isHovered, setIsHovered] = useState<boolean>(false);
+  const cardRef = React.useRef<HTMLDivElement>(null);
+
+  const speed = 0.2 + (index % 3) * 0.1;
+  const translateY = -scrollY * speed;
 
   useEffect(() => {
-    const handleScroll = (): void => {
-      const scrolled = window.scrollY;
-      const speed = 0.2 + (index % 3) * 0.1;
-      setTranslateY(-scrolled * speed);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -100px 0px' }
+    );
 
-      const cardTopPosition = position.top;
-      const windowHeight = window.innerHeight;
-      const scrollTrigger = cardTopPosition - windowHeight + 200;
-      
-      if (scrolled > scrollTrigger) {
-        const progress = Math.min((scrolled - scrollTrigger) / 300, 1);
-        setOpacity(progress);
-        setScale(0.8 + progress * 0.2);
-      } else {
-        setOpacity(0);
-        setScale(0.8);
-      }
-    };
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
 
-    handleScroll();
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [index, position.top]);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div
-      className="hidden md:block absolute bg-white rounded-lg shadow-xl p-8 transition-all duration-700 ease-out hover:scale-105 hover:shadow-2xl cursor-pointer"
+      ref={cardRef}
+      className="hidden md:block absolute bg-white rounded-lg shadow-xl p-8 hover:scale-105 hover:shadow-2xl cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => link && window.open(link, '_blank')}
@@ -84,10 +80,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, icons, description, po
         top: `${position.top}px`,
         width: '340px',
         maxWidth: '90vw',
-        transform: `translateY(${translateY}px) scale(${scale})`,
-        opacity: opacity,
+        transform: `translate3d(0, ${translateY}px, 0) scale(${isVisible ? '1' : '0.8'})`,
+        opacity: isVisible ? 1 : 0,
+        transition: isVisible ? 'opacity 0.7s ease-out' : 'none',
         zIndex: isHovered ? 9999 : index,
         cursor: link ? 'pointer' : 'default',
+        willChange: 'transform, opacity',
       }}
     >
       <div className="mb-4 flex items-center justify-between">
@@ -158,6 +156,26 @@ const ProjectCardMobile: React.FC<{title: string; icons: React.ReactNode[]; desc
 }
 
 const ProjectSection: React.FC = () => {
+  const [scrollY, setScrollY] = useState<number>(0);
+
+  useEffect(() => {
+    let ticking = false;
+
+    const updateScroll = () => {
+      setScrollY(window.scrollY);
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(updateScroll);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   const projects: Project[] = [
     {
       title: 'Sales Dashboard',
@@ -238,7 +256,7 @@ const ProjectSection: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background scroll-smooth">
-      <section id="projects" className="pt-5 pb-20 px-6">
+      <section id="projects" className="pt-5 pb-20 px-6" style={{ scrollMarginTop: '64px' }}>
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-6xl md:text-7xl font-bold mb-6 tracking-tight">
             SELECTED PROJECTS
@@ -260,6 +278,7 @@ const ProjectSection: React.FC = () => {
             position={positions[index]}
             index={index}
             link={project.link}
+            scrollY={scrollY}
           />
         ))}
       </section>
