@@ -178,19 +178,19 @@ const ProjectSection: React.FC = () => {
   }, []);
   const projects: Project[] = [
     {
-      title: 'Sales Dashboard',
+      title: 'Sales Management',
       icons: [<SiNextdotjs key="1" />, <SiRadixui key="2" />, <SiReactquery key="3" />, <SiReacttable key="4" />, <SiTailwindcss key="5" />, <SiTypescript key="6" />, <FaShieldAlt key="7" />, "Orval"],
       description:
         'A web-based sales dashboard designed to support sales operations by managing sales data, tracking progress, and handling registration, approval, and data entry workflows. The dashboard provides clear visibility into sales activities and ensures structured, efficient, and traceable operational processes.',
     },
     {
-      title: 'eRpay Dashboard',
+      title: 'eRpay Admin Dashboard',
       icons: [<FaReact key="1" />,<FaBootstrap key="2" />,<SiReactrouter key="3" />, <SiAxios key="4" />],
       description:
         'Develop a centralized web dashboard designed for eRpay merchants and internal users to manage transactions, merchant data, and payment operations, with role-based access and real-time data visibility across the payment ecosystem.',
     },
     {
-      title: 'Ramah Indonesia Dashboard',
+      title: 'Ramah Indonesia - CMS Dashboard',
       icons: [<FaReact key="1" />],
       description:
         'A centralized e-commerce dashboard that serves as the source platform for managing UMKM products, orders, and merchant data, integrated with internal systems within the Ramah Indonesia ecosystem to support scalable and efficient operations.',
@@ -202,10 +202,10 @@ const ProjectSection: React.FC = () => {
         'A web-based management dashboard designed to configure and control soundbox devices, smart POS terminals, and payment devices. The dashboard enables remote settings for sound configuration, language preferences, advertising content, and device parameters, providing centralized control and efficient management across deployed payment terminals.',
     },
     {
-      title: 'Service Hub Dashboard',
+      title: 'Service Hub Integration Web',
       icons: [<SiNextdotjs key="1" />, <SiTypescript key="2" />, <FaShieldAlt key="3" />],
       description:
-        'An integration-focused dashboard that acts as a service hub, connecting FMS and TMS with multiple systems across the ecosystem through centralized control, data flow management, and real-time operational visibility.',
+        'An integration-focused web and dashboard that acts as a service hub, connecting FMS and TMS with multiple systems across the ecosystem through centralized control, data flow management, and real-time operational visibility.',
     },
     {
       title: 'Nikah Check',
