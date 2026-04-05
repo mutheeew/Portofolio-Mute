@@ -18,10 +18,10 @@ export default function ProfileSection() {
             />
         
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden translate-y-24 md:translate-y-0">
-    <h2 className="text-5xl sm:text-8xl md:text-[150px] lg:text-[180px] font-black text-gray-300/40 leading-none select-none text-center px-4 w-full">
-        FRONTEND DEV
-    </h2>
-</div>
+                <h2 className="text-5xl sm:text-8xl md:text-[150px] lg:text-[180px] font-black text-gray-300/40 leading-none select-none text-center px-4 w-full">
+                    FRONTEND DEV
+                </h2>
+            </div>
 
             <div 
                 className="hidden md:block absolute bottom-0 left-0 right-0 z-20 pointer-events-none"
@@ -66,7 +66,7 @@ export default function ProfileSection() {
                 <div className="flex flex-col items-center gap-3">
                     <h3 className="text-base font-bold text-gray-900">Follow Me</h3>
                     <div className="flex gap-3">
-                        <a href="#" className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all shadow-sm">
+                        <a href="https://www.mutheeew.tech" className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all shadow-sm">
                             <Dribbble className="w-5 h-5" />
                         </a>
                         <a href="https://www.linkedin.com/in/muthmainnah-mute" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all shadow-sm">
@@ -124,7 +124,7 @@ export default function ProfileSection() {
                         <div>
                             <h3 className="text-lg font-bold text-gray-900 mb-4">Follow Me</h3>
                             <div className="flex gap-3">
-                                <a href="#" className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all shadow-sm">
+                                <a href="https://www.mutheeew.tech" className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all shadow-sm">
                                     <Dribbble className="w-5 h-5" />
                                 </a>
                                 <a href="https://www.linkedin.com/in/muthmainnah-mute" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all shadow-sm">
